@@ -1,7 +1,5 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
-import ecommerceImg from '../assets/ecommerce.png'; 
-// ሌሎች ፎቶዎች ካሉህ እዚህ import አድርጋቸው፤ ለጊዜው በዲዛይን መልክ እናስቀምጣቸው
+import ecommerceImg from '../assets/ecommerce.png';
 
 const Projects = () => {
   const isDark = useSelector((state) => state.nav.darkMode);
@@ -12,14 +10,14 @@ const Projects = () => {
       tech: "MongoDB, Express, React, Node",
       link: "https://github.com/DawitMulugeta23/Ecommerce-web-app",
       image: ecommerceImg,
-      desc: "A full-stack MERN platform featuring secure MongoDB integration, product management, and real-time filtering."
+      desc: "A full-stack MERN platform featuring secure MongoDB integration, product management, and user authentication."
     },
     {
-      title: "Automotive Repair System",
-      tech: "Python, Desktop GUI",
-      link: "https://github.com/DawitMulugeta23/AMRMS/blob/main/AutomotiveRepairSystem.java",
-      image: "https://via.placeholder.com/600x400/3b82f6/ffffff?text=Python+Project", 
-      desc: "A robust Python-based management tool for automotive repair shops to track service history and customer records."
+      title: "Tkinter Python Project", // አዲሱ ፕሮጀክት እዚህ ተተክቷል
+      tech: "Python, Tkinter (GUI)",
+      link: "https://github.com/DawitMulugeta23/tkinter-python-project/blob/main/project.py",
+      image: "https://via.placeholder.com/600x400/3b82f6/ffffff?text=Python+Tkinter+Project", 
+      desc: "A desktop application developed using Python's Tkinter library, focusing on clean user interface and functional logic."
     },
     {
       title: "Video Post App",
@@ -44,7 +42,7 @@ const Projects = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black tracking-tighter uppercase italic">My Projects</h2>
+          <h2 className="text-5xl font-black tracking-tighter uppercase italic">Projects</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
 
@@ -52,13 +50,12 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className={`group flex flex-col rounded-[2.5rem] overflow-hidden transition-all duration-500 border-2 ${
+              className={`group flex flex-col rounded-[2.5rem] overflow-hidden transition-all duration-300 border-2 ${
                 isDark 
-                ? 'bg-slate-800/50 border-slate-700 hover:border-blue-500' 
+                ? 'bg-slate-800/40 border-slate-700 hover:border-blue-500' 
                 : 'bg-white border-white shadow-xl hover:shadow-2xl hover:border-blue-500'
               }`}
             >
-              {/* ፕሮጀክት ምስል */}
               <div className="relative h-60 overflow-hidden bg-slate-200">
                 <img 
                   src={project.image} 
@@ -67,12 +64,11 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                    <a href={project.link} target="_blank" rel="noreferrer" className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm uppercase shadow-lg">
-                     View GitHub
+                     View Source
                    </a>
                 </div>
               </div>
 
-              {/* ፕሮጀክት ዝርዝር */}
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.split(', ').map((t) => (
