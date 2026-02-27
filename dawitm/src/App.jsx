@@ -1,18 +1,22 @@
-import React from 'react';
-import Navbar from './components/Navbar';
+import Contact from './components/Contact';
 import Hero from './components/Hero';
-import Skills from './components/Skills'; 
-// ማሳሰቢያ፡ Skills.jsx ባለፈው የላኩልህ ኮድ እዚህ ጋር import ይደረጋል
+import Navbar from './components/Navbar';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 function App() {
   return (
-    <div className="scroll-smooth">
+    <div className="font-sans text-gray-900">
       <Navbar />
-      <Hero />
-      <Skills />
-      {/* የ Projects እና Contact ሴክሽኖችን እዚህ ይጨምሩ */}
-      <section id="projects" className="h-96 p-20"><h2>Projects Section</h2></section>
-      <section id="contact" className="h-96 p-20 bg-gray-100"><h2>Contact Section</h2></section>
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <footer className="py-8 bg-black text-white text-center text-sm border-t border-gray-800">
+        © {new Date().getFullYear()} - Developed by CS Student @ DBU
+      </footer>
     </div>
   );
 }
