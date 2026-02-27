@@ -4,9 +4,11 @@ export const navSlice = createSlice({
   name: 'nav',
   initialState: { activeSection: 'home' },
   reducers: {
-    setActive: (state, action) => { state.activeSection = action.payload; }
-  }
+    setActiveSection: (state, action) => {
+      state.activeSection = action.payload;
+    },
+  },
 });
 
-export const { setActive } = navSlice.actions;
+export const { setActiveSection } = navSlice.actions;
 export default navSlice.reducer;
