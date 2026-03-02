@@ -17,7 +17,7 @@ function App() {
         <Contact />
       </main>
       <footer className="py-8 bg-black text-white text-center text-sm border-t border-gray-800">
-        © {new Date().getFullYear()} - Developed by CS Student @ DBU
+        © {new Date().getFullYear()} - Developed by Dawit Mulugeta CS Student at DBU
       </footer>
     </div>
   );

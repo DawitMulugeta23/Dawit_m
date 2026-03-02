@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import dawitCv from "../assets/Dawitm.png"; // የCV ፋይልህ እዚህ import ይሆናል
-import profileImg from "../assets/profiles.png";
+import dawitCv from "../assets/Dawitm.png";
+import profileImg from "../assets/profile.png";
 
 const Hero = () => {
   const isDark = useSelector((state) => state.nav.darkMode);
@@ -40,6 +40,7 @@ const Hero = () => {
       <div
         className={`relative w-[92%] max-w-7xl min-h-[75vh] grid md:grid-cols-2 rounded-[40px] overflow-hidden shadow-2xl ${isDark ? "bg-slate-800" : "bg-white"}`}
       >
+        {/* Left Content */}
         <div className="p-10 md:p-16 flex flex-col justify-center space-y-6 relative z-10">
           <div className="space-y-1">
             <h3
@@ -56,11 +57,11 @@ const Hero = () => {
           <p
             className={`text-base leading-relaxed max-w-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}
           >
-            I am a CS student at Debre Berhan University. I focus on
-            building clean, modern and functional web applications.
+            I am a CS student at Debre Berhan University. I focus on building
+            clean, modern and functional web applications.
           </p>
 
-          {/* Home Social Icons */}
+          {/* Social Icons */}
           <div className="flex gap-4">
             {socialLinks.map((link) => (
               <a
@@ -82,7 +83,7 @@ const Hero = () => {
           <div className="pt-2">
             <a
               href={dawitCv}
-              download="Dawit_M_CV.pnj" // በሚወርድበት ጊዜ የሚኖረው ስም
+              download="Dawit_M_CV.png"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-blue-700 transition-all"
             >
               Download CV
@@ -90,20 +91,24 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative bg-blue-600 flex items-end justify-center overflow-hidden">
+        {/* Right Side: Image with Badge */}
+        <div className="relative bg-blue-600 flex items-end justify-center overflow-hidden h-full">
           <div
-            className="absolute top-1/2 -left-1 transform -translate-y-1/2 w-24 h-48 bg-inherit md:bg-white rounded-r-full hidden md:block"
+            className="absolute top-1/2 -left-1 transform -translate-y-1/2 w-24 h-48 rounded-r-full hidden md:block"
             style={{ backgroundColor: isDark ? "#1e293b" : "white" }}
           ></div>
           <div className="relative w-full h-full flex items-end justify-center">
             <img
               src={profileImg}
               alt="Dawit Mulugeta"
-              className="h-[85%] w-auto object-contain z-20"
+              className="max-h-[90%] w-auto object-contain block align-bottom z-20"
+              style={{ display: "block", marginBottom: "0" }}
             />
+
+            {/* ተስተካክሎ የተሰራው "Web Developer" Gradient Badge */}
             <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 z-30 bg-white px-5 py-2 rounded-full shadow-xl hidden md:flex items-center gap-2 border border-blue-50">
               <span className="text-blue-600 font-bold">{"</>"}</span>
-              <span className="text-blue-900 font-black text-xs uppercase tracking-tighter">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9061FF] via-[#3FB9AD] to-[#00D27A] font-black text-xs uppercase tracking-tighter">
                 Web Developer
               </span>
             </div>
