@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux';
 import ecommerceImg from '../assets/ecommerce.png';
+import examSystem from '../assets/images.jpg'
+import videoPost from '../assets/images.png'
+import Hrms from '../assets/hrms.jpg'
 
 const Projects = () => {
   const isDark = useSelector((state) => state.nav.darkMode);
@@ -16,21 +19,21 @@ const Projects = () => {
       title: "Tkinter Python Project", // አዲሱ ፕሮጀክት እዚህ ተተክቷል
       tech: "Python, Tkinter (GUI)",
       link: "https://github.com/DawitMulugeta23/tkinter-python-project/blob/main/project.py",
-      image: "https://via.placeholder.com/600x400/3b82f6/ffffff?text=Python+Tkinter+Project", 
+      image: Hrms, 
       desc: "A desktop application developed using Python's Tkinter library, focusing on clean user interface and functional logic."
     },
     {
       title: "Video Post App",
       tech: "MERN Stack, Cloudinary",
       link: "https://github.com/DawitMulugeta23/video-Post-app-using-mern-stake",
-      image: "https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Video+App",
+      image: videoPost,
       desc: "A social media style application for sharing and interacting with video content using the MERN stack."
     },
     {
       title: "Online Exam System",
       tech: "Java, MySQL",
       link: "https://github.com/DawitMulugeta23/Exam-System",
-      image: "https://via.placeholder.com/600x400/10b981/ffffff?text=Exam+System",
+      image: examSystem,
       desc: "A secure system for conducting and managing academic examinations online with real-time results."
     }
   ];

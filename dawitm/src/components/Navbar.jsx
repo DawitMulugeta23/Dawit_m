@@ -13,7 +13,7 @@ const Navbar = () => {
 
       <div className="flex items-center space-x-6">
         <div className="hidden md:flex space-x-6 font-bold text-sm uppercase tracking-widest">
-          {['home', 'about', 'skills', 'portfolio', 'contact'].map((item) => (
+          {['home', 'about', 'skills', 'project', 'contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item}`} 

@@ -1,55 +1,60 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
+import aicetify from "../assets/aicetify.png";
+import funprog from "../assets/funprog.png";
 
 const Skills = () => {
-  // የ Dark Mode ሁኔታን ከ Redux እንወስዳለን
   const isDark = useSelector((state) => state.nav.darkMode);
 
-  const skills = [
-    { name: 'React', level: '85%', color: 'bg-blue-500' },
-    { name: 'Express', level: '70%', color: 'bg-green-500' },
-    { name: 'Python', level: '65%', color: 'bg-yellow-500' },
-    { name: 'Java', level: '55%', color: 'bg-red-500' },
+  const certificates = [
+    { title: "Fundamental Programming", provider: "Academic", img: funprog },
+    { title: "AI Certificate", provider: "Udacity", img: aicetify },
+    {
+      title: "Full Stack Mastery",
+      provider: "Coming Soon",
+      img: "https://via.placeholder.com/150?text=Wait",
+    },
+    {
+      title: "Advanced React",
+      provider: "Coming Soon",
+      img: "https://via.placeholder.com/150?text=Wait",
+    },
   ];
 
   return (
-    <section 
-      id="skills" 
-      className={`py-24 px-6 transition-colors duration-500 ${isDark ? 'bg-slate-900 text-white' : 'bg-gray-50 text-slate-900'}`}
+    <section
+      id="skills"
+      className={`py-24 px-6 ${isDark ? "bg-slate-900 text-white" : "bg-gray-50 text-slate-900"}`}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-black tracking-tight mb-4 uppercase">Technical Skills</h2>
-          <div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
-        </div>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-center text-4xl font-black mb-16 uppercase italic">
+          Skills & Certificates
+        </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {skills.map((skill) => (
-            <div 
-              key={skill.name} 
-              className={`p-8 rounded-3xl transition-all shadow-xl hover:scale-[1.02] ${isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-gray-100'}`}
+        {/* Certificates Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {certificates.map((cert, i) => (
+            <div
+              key={i}
+              className={`p-4 rounded-3xl text-center border-2 transition-all ${isDark ? "bg-slate-800 border-slate-700" : "bg-white border-blue-50 shadow-lg"}`}
             >
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-xl font-bold tracking-tight">{skill.name}</span>
-                <span className={`text-sm font-black px-3 py-1 rounded-full ${isDark ? 'bg-slate-700 text-blue-400' : 'bg-blue-50 text-blue-600'}`}>
-                  {skill.level}
-                </span>
+              <div className="w-full aspect-square mb-4 rounded-2xl overflow-hidden bg-gray-100">
+                <img
+                  src={cert.img}
+                  alt={cert.title}
+                  className="w-full h-full object-contain"
+                />
               </div>
-              
-              {/* Progress Bar Container */}
-              <div className={`w-full h-3 rounded-full overflow-hidden ${isDark ? 'bg-slate-700' : 'bg-gray-100'}`}>
-                <div 
-                  className={`h-full rounded-full transition-all duration-1000 ease-out ${skill.color}`} 
-                  style={{ width: skill.level }}
-                ></div>
-              </div>
-              
-              <p className={`mt-4 text-sm font-medium opacity-60`}>
-                Proficiency in {skill.name} development.
+              <h4 className="font-bold text-sm">{cert.title}</h4>
+              <p className="text-xs text-blue-600 font-bold mt-1">
+                {cert.provider}
               </p>
             </div>
           ))}
         </div>
+        <p className="text-center mt-10 text-gray-500 font-medium italic">
+          More professional certificates will be uploaded as I complete my MERN
+          stack journey.
+        </p>
       </div>
     </section>
   );
